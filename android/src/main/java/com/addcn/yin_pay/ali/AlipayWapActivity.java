@@ -27,8 +27,11 @@ public class AlipayWapActivity extends Activity {
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
         String url = "";
-        if(extras != null && extras.getString("url") != null) {
-            url = extras.getString("url");
+        if(extras != null) {
+            String str = extras.getString("url");
+            if(str != null) {
+                url = str;
+            }
         }
 
         super.requestWindowFeature(Window.FEATURE_NO_TITLE);
